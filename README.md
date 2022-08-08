@@ -39,7 +39,7 @@
 -   `DEL_CMDS`             : Set this to True if you want to delete command messages from users who don't have the perms to run that command.
 -   `AI_API_KEY`           : Make your bot talk using Intellivoid's chatbot API, [Get your key from](https://coffeehouse.intellivoid.net/)
 
-## Deploy Your Own Shikari Robot 💜(Deploy To Heroku)💜
+## Deploy Your Own JaNa Robot 💜(Deploy To Heroku)💜
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ShikariBaaZ/JaNa_Robot)
 
