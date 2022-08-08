@@ -1,4 +1,3 @@
-
 import random, html
 
 from JaNa_Robot import dispatcher

@@ -23,4 +23,4 @@ def section(
             + bold(key)
             + ((value[0] + n) if isinstance(value, list) else mono(value))
         )
-    return 
+    return

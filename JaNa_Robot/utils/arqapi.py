@@ -4,7 +4,7 @@ from random import randint
 from time import time
 
 import aiohttp
-from JaNa_Robot import aiohttpsession 
+from JaNa_Robot import aiohttpsession
 from aiohttp import ClientSession
 
 from google_trans_new import google_translator
