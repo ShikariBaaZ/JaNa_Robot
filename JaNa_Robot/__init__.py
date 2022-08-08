@@ -123,7 +123,7 @@ if ENV:
     ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.in")
     ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "BCYKVF-KYQWFM-JNDORU-KLOLFQ-ARQ")
     MONGO_PORT = os.environ.get("MONGO_PORT")
-    MONGO_DB = os.environ.get("MONGO_DB", "Emiko")
+    MONGO_DB = os.environ.get("MONGO_DB", "Jana")
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
