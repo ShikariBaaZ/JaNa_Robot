@@ -9,7 +9,7 @@ from JaNa_Robot import (
     TIGERS,
     WOLVES,
     dispatcher,
-) 
+)
 from JaNa_Robot.modules.helper_funcs.chat_status import dev_plus
 from JaNa_Robot.modules.helper_funcs.extraction import (
     extract_user,

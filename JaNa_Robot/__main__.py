@@ -93,17 +93,18 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text=f"About {dispatcher.bot.first_name}", callback_data="jana_"),
-    ],
-    [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
         InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
+            text=f"About {dispatcher.bot.first_name}", callback_data="jana_"
         ),
     ],
     [
+        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+        InlineKeyboardButton(text="Try inline!​​", switch_inline_query_current_chat=""),
+    ],
+    [
         InlineKeyboardButton(
-            text="➗ Add Me To Your Group ➗", url=f"t.me/{bu}?startgroup=new"),
+            text="➗ Add Me To Your Group ➗", url=f"t.me/{bu}?startgroup=new"
+        ),
     ],
 ]
 
@@ -198,7 +199,13 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
+                        [
+                            [
+                                InlineKeyboardButton(
+                                    text="Go Back", callback_data="help_back"
+                                )
+                            ]
+                        ]
                     ),
                 )
 
@@ -222,7 +229,8 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
-                    sql.num_chats()),                        
+                    sql.num_chats(),
+                ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -231,8 +239,8 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_text(
             f"👋 Hi, I'm {dispatcher.bot.first_name}. Nice to meet You.",
-            parse_mode=ParseMode.HTML
-       )
+            parse_mode=ParseMode.HTML,
+        )
 
 
 def error_handler(update, context):
@@ -374,20 +382,27 @@ def jana_about_callback(update, context):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Admins", callback_data="jana_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="jana_notes"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Support", callback_data="jana_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="jana_credit"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Source Code", url="https://github.com/ShikariBaaZ/JaNa_Robot"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="jana_back"),
-                 ]
+                    [
+                        InlineKeyboardButton(text="Admins", callback_data="jana_admin"),
+                        InlineKeyboardButton(text="Notes", callback_data="jana_notes"),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Support", callback_data="jana_support"
+                        ),
+                        InlineKeyboardButton(
+                            text="Credits", callback_data="jana_credit"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Source Code",
+                            url="https://github.com/ShikariBaaZ/JaNa_Robot",
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Go Back", callback_data="jana_back"),
+                    ],
                 ]
             ),
         )
@@ -427,18 +442,20 @@ def jana_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Support", url="https://t.me/ShikariSupportNetwork"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/The_SHIKARI_Network"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="jana_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="Support", url="https://t.me/ShikariSupportNetwork"
+                        ),
+                        InlineKeyboardButton(
+                            text="Updates", url="https://t.me/The_SHIKARI_Network"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Go Back", callback_data="jana_"),
+                    ],
                 ]
             ),
         )
-
 
     elif query.data == "jana_credit":
         query.message.edit_text(
@@ -447,32 +464,51 @@ def jana_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Shikari", url="https://github.com/ShikariBaaZ"),
-                    InlineKeyboardButton(text="Joey", url="https://t.me/Joey_xo"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="TheHamkerCat", url="https://github.com/TheHamkerCat"),
-                    InlineKeyboardButton(text="sena-ex", url="https://github.com/kennedy-ex"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Anime Kaizoku", url="https://github.com/animekaizoku"),
-                    InlineKeyboardButton(text="TheGhost Hunter", url="https://github.com/HuntingBots"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Inuka Asith", url="https://github.com/inukaasith"),
-                    InlineKeyboardButton(text="Paul Larsen", url="https://github.com/PaulSonOfLars"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Support", url="https://t.me/ShikariSupportNetwork"),
-                    InlineKeyboardButton(text="Chatting group", url="https://t.me/Chatter_squad"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="jana_"),
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="Shikari", url="https://github.com/ShikariBaaZ"
+                        ),
+                        InlineKeyboardButton(text="Joey", url="https://t.me/Joey_xo"),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="TheHamkerCat", url="https://github.com/TheHamkerCat"
+                        ),
+                        InlineKeyboardButton(
+                            text="sena-ex", url="https://github.com/kennedy-ex"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Anime Kaizoku", url="https://github.com/animekaizoku"
+                        ),
+                        InlineKeyboardButton(
+                            text="TheGhost Hunter", url="https://github.com/HuntingBots"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Inuka Asith", url="https://github.com/inukaasith"
+                        ),
+                        InlineKeyboardButton(
+                            text="Paul Larsen", url="https://github.com/PaulSonOfLars"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Support", url="https://t.me/ShikariSupportNetwork"
+                        ),
+                        InlineKeyboardButton(
+                            text="Chatting group", url="https://t.me/Chatter_squad"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Go Back", callback_data="jana_"),
+                    ],
                 ]
             ),
         )
+
 
 def Source_about_callback(update, context):
     query = update.callback_query
@@ -492,27 +528,25 @@ def Source_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="jana_")
-                 ]
-                ]
+                [[InlineKeyboardButton(text="Go Back", callback_data="jana_")]]
             ),
         )
     elif query.data == "source_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=False,
         )
+
 
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -804,9 +838,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}", 
-                "👋 Hi, i'm alive.",
-                parse_mode=ParseMode.MARKDOWN
+                f"@{SUPPORT_CHAT}", "👋 Hi, i'm alive.", parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
             LOGGER.warning(
